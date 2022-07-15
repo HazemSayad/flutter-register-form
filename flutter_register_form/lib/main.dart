@@ -19,3 +19,23 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class RegistrationForm extends StatefulWidget {
+  const RegistrationForm({Key? key}) : super(key: key);
+
+  @override
+  State<RegistrationForm> createState() => _RegistrationFormState();
+}
+
+class _RegistrationFormState extends State<RegistrationForm> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const TextField(),
+        const TextField(),
+        TextButton(onPressed: () {}, child: const Text("Register"))
+      ],
+    );
+  }
+}
