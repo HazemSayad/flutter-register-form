@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    title: "Registration Form",
+    theme: ThemeData(primarySwatch: Colors.blue),
+    home: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
