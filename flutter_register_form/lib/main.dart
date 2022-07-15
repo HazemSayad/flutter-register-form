@@ -28,13 +28,50 @@ class RegistrationForm extends StatefulWidget {
 }
 
 class _RegistrationFormState extends State<RegistrationForm> {
+  late final TextEditingController _email;
+  late final TextEditingController _pass;
+
+  @override
+  void initState() {
+    _email = TextEditingController();
+    _pass = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _pass.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const TextField(),
-        const TextField(),
-        TextButton(onPressed: () {}, child: const Text("Register"))
+        TextField(
+          keyboardType: TextInputType.emailAddress,
+          enableSuggestions: false,
+          autocorrect: false,
+          decoration: const InputDecoration(
+              icon: Icon(Icons.email), hintText: "Enter your email"),
+          controller: _email,
+        ),
+        TextField(
+          obscureText: true,
+          enableSuggestions: false,
+          autocorrect: false,
+          decoration: const InputDecoration(
+              icon: Icon(Icons.password), hintText: "Enter your password"),
+          controller: _pass,
+        ),
+        TextButton(
+            onPressed: () {
+              String email = _email.text;
+              String pass = _pass.text;
+            },
+            child: const Text("Register"))
       ],
     );
   }
