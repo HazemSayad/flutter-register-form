@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Registration Form")),
-      body: const Center(child: Text("Registration Form Body")),
+      body: const RegistrationForm(),
     );
   }
 }
